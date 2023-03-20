@@ -1,26 +1,25 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="navbar-center">
+      <a class="navbar-brand" href="#">Login</a>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "navbar-form navbar-right"}) do |f| %>
+      <%= f.submit "Log in", class: "btn btn-default" %>
+    <% end %>
   </div>
-<% end %>
+</nav>
 
-<%= render "devise/shared/links" %>
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.email_field :email, placeholder: "Email", class: "form-control", id: "email", autofocus: true, autocomplete: "email" %>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: "Password", class: "form-control", autocomplete: "current-password" %>
+    </div>
+      <%= f.submit "Log in", class: "btn btn-default" %>
+  <% end %>
+</div>

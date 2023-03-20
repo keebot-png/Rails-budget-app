@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.squeeze {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 20px;
+}
