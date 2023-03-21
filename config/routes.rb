@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  root "home#splash"
+  devise_for :users
   resources :payments
   resources :categories
-  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "home#splash"
 end
