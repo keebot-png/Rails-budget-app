@@ -5,10 +5,7 @@
 <div id="categories">
   <% @categories.each do |category| %>
     <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>
+<%= button_to "Add a new category", new_category_path, method: :get %>
