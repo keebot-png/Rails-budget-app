@@ -4,11 +4,18 @@ class PaymentsController < ApplicationController
 
   # GET /payments or /payments.json
   def index
-    @payments = Payment.all
+    @categories = Category.find(params[:category_id])
+    puts "This is the #{@categories}"
+    @payments = @categories.payments.order(created_at: :desc)
+    puts "This is the #{@payments}"
+    @total = @payments.sum(:amount)
   end
 
   # GET /payments/1 or /payments/1.json
-  def show; end
+  def show
+    @categories = Category.find_by(id: params[:category_id])
+    @payment = Payment.find(params[:id])
+  end
 
   # GET /payments/new
   def new
@@ -20,11 +27,12 @@ class PaymentsController < ApplicationController
 
   # POST /payments or /payments.json
   def create
-    @payment = Payment.new(payment_params)
+    @category = current_user.id
+    @payment = current_user.payments.build(payment_params)
 
     respond_to do |format|
       if @payment.save
-        format.html { redirect_to payment_url(@payment), notice: 'Payment was successfully created.' }
+        format.html { redirect_to category_payments_path(@category), notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new, status: :unprocessable_entity }

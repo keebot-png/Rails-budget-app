@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @payment %>
+<%= render 'payments', payment: @payments %>
 
 <div>
-  <%= link_to "Edit this payment", edit_payment_path(@payment) %> |
-  <%= link_to "Back to payments", payments_path %>
+  <%= link_to "Edit this payment", edit_payment_path(@payments) %> |
+  <%= link_to "Back to payments", category_payments_path(@payments.author_id) %>
 
-  <%= button_to "Destroy this payment", @payment, method: :delete %>
+  <%= button_to "Destroy this payment", category_payment_path(@payments.author_id, @payments), method: :delete %>
 </div>
