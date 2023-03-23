@@ -3,25 +3,14 @@ class PaymentsController < ApplicationController
   before_action :authenticate_user!
 
   # GET /payments or /payments.json
-  def index
-    # @category = current_user.categories.find_by(id: params[:category_id])
-    # @categories = Category.find(params[:category_id])
-
-    # @payments = @category.payments.order(created_at: :desc)
-    # puts "This is the #{@payments}"
-
-    # @total = @payments.sum(:amount)
-  end
+  def index; end
 
   # GET /payments/1 or /payments/1.json
-  def show
-    # @categories = Category.find_by(id: params[:category_id])
-    # @payment = Payment.find(params[:id])
-  end
+  def show; end
 
   # GET /payments/new
   def new
-    @category = current_user.id
+    @category = Category.find(params[:category_id])
     @payment = Payment.new
   end
 
@@ -30,7 +19,7 @@ class PaymentsController < ApplicationController
 
   # POST /payments or /payments.json
   def create
-    @category = current_user.id
+    @category = Category.find(params[:category_id])
     @payment = current_user.payments.build(payment_params)
 
     respond_to do |format|
