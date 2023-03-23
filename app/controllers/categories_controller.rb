@@ -4,11 +4,13 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = current_user.categories.all
+    @categories = current_user.categories
   end
 
   def show
-    
+    @category = Category.includes(:payments).find_by(id: params[:id])
+    @payments = @category.payments.order(created_at: :desc).includes(:categories)
+    @total = @payments.sum(:amount)
   end
 
   # GET /categories/new

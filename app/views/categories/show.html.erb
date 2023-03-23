@@ -8,3 +8,13 @@
 
   <%= button_to "Destroy this category", @category, method: :delete %>
 </div>
+
+<h1>Payments</h1>
+
+<div id="payments">
+  <% @payments.each do |payment| %>
+    <%= render 'payments', payment: payment %>
+  <% end %>
+</div>
+
+<%= link_to "Add New Payment", new_category_payment_path(@category) %>

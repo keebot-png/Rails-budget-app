@@ -4,10 +4,12 @@ class PaymentsController < ApplicationController
 
   # GET /payments or /payments.json
   def index
-    @categories = Category.find(params[:category_id])
-    puts "This is the #{@categories}"
-    @payments = @categories.payments.order(created_at: :desc)
+    @category = current_user.categories.find_by(id: params[:category_id])
+    # @categories = Category.find(params[:category_id])
+
+    @payments = @category.payments.order(created_at: :desc)
     puts "This is the #{@payments}"
+
     @total = @payments.sum(:amount)
   end
 
@@ -32,7 +34,7 @@ class PaymentsController < ApplicationController
 
     respond_to do |format|
       if @payment.save
-        format.html { redirect_to category_payments_path(@category), notice: 'Payment was successfully created.' }
+        format.html { redirect_to category_path(@category), notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new, status: :unprocessable_entity }

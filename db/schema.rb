@@ -23,11 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_120810) do
     t.index ["author_id"], name: "index_categories_on_author_id"
   end
 
-  create_table "categories_payments", id: false, force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "payment_id", null: false
-  end
-
   create_table "payments", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
