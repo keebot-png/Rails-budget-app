@@ -8,9 +8,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:payments).find_by(id: params[:id])
-    @payments = @category.payments.order(created_at: :desc).includes(:categories)
-    @total = @payments.sum(:amount)
+    @category = Category.find_by(id: params[:id])
+    @payments = @category.payments.order(created_at: :desc)
+    # @total = @payments.sum(:amount)
   end
 
   # GET /categories/new

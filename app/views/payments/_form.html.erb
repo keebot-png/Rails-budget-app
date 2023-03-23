@@ -21,6 +21,11 @@
     <%= form.number_field :amount %>
   </div>
 
+  <div class="pt-3">
+    <%= form.label :category_id, "Category ID" %><br />
+    <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: true %> 
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
