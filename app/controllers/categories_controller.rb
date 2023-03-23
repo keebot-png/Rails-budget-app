@@ -10,7 +10,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by(id: params[:id])
     @payments = @category.payments.order(created_at: :desc)
-    # @total = @payments.sum(:amount)
   end
 
   # GET /categories/new

@@ -23,7 +23,8 @@
 
   <div class="pt-3">
     <%= form.label :category_id, "Category ID" %><br />
-    <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: true %> 
+    <% category = Category.where(id: params[:category_id]) %>
+    <%= form.collection_select :category_id, category, :id, :name, prompt: true %> 
   </div>
 
   <div>
