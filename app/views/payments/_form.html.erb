@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="d-flex justify-content-center form-payment">
+  <%= form.label :name, style: "display: block" %>
+  <%= form.text_field :name %>
+</div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
-  </div>
+<div class="d-flex justify-content-center form-payment">
+  <%= form.label :amount, style: "display: block" %>
+  <%= form.number_field :amount %>
+</div>
 
-  <div class="pt-3">
-    <%= form.label :category_id, "Category ID" %><br />
-    <% category = Category.where(id: params[:category_id]) %>
-    <%= form.collection_select :category_id, category, :id, :name, prompt: true %> 
-  </div>
+<div class="d-flex justify-content-center pt-3 form-payment">
+  <%= form.label :category_id, "Category ID" %>
+  <% category = Category.where(id: params[:category_id]) %>
+  <%= form.collection_select :category_id, category, :id, :name, prompt: true %> 
+</div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<div class="d-flex justify-content-center form-payment btn btn-success w-100 text-center">
+  <%= form.submit "Create Payment", class: "btn btn-outline-light" %>
+</div>
 <% end %>

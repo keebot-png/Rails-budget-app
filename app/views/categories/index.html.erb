@@ -1,6 +1,5 @@
+<h1 class='text-center category-h1'>Categories</h1>
 <p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
 
 <div id="categories">
   <% @categories.each do |category| %>
@@ -8,6 +7,8 @@
   <% end %>
 </div>
 
-<div class='text-center'>
-<%= button_to "Add a new category", new_category_path, class: 'btn btn-primary btn-lg active', method: :get %>
+<div class="fixed-bottom">
+  <div class='btn btn-success w-100 text-center'>
+    <%= button_to "Add a new category", new_category_path, class: 'btn btn-outline-light w-75', method: :get %>
+  </div>
 </div>

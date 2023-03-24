@@ -3,12 +3,9 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
     </div>
-    <div class="navbar-center">
-      <a class="navbar-brand" href="#">Login</a>
+    <div class="navbar-form navbar-right">
+      <p class="navbar-brand">Login</p>
     </div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "navbar-form navbar-right"}) do |f| %>
-      <%= f.submit "Log in", class: "btn btn-default" %>
-    <% end %>
   </div>
 </nav>
 
@@ -20,6 +17,8 @@
     <div class="form-group">
       <%= f.password_field :password, placeholder: "Password", class: "form-control", autocomplete: "current-password" %>
     </div>
-      <%= f.submit "Log in", class: "btn btn-default" %>
+    <div class='text-center'>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>

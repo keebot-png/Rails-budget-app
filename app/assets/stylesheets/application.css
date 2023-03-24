@@ -14,12 +14,6 @@
  *= require_self
  */
 
- /* * {
-  box-sizing: border-box;
-  padding: 10px;
-  margin: 10px;
-} */
-
 .squeeze {
     height: 100vh;
     display: flex;
@@ -32,6 +26,33 @@
     bottom: 20px;
 }
 
+.container-fluid {
+  background-color: #007bff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: white;
+  color: white;
+  border-radius: 0;
+}
+
+nav a {
+  color: white;
+}
+
+nav .navbar-brand {
+  color: white;
+}
+
+.fas {
+  color: white;
+}
+
+body {
+  background-color: rgb(234, 237, 240);
+}
+
 .container-block {
   display: flex;
   flex-direction: column;
@@ -40,10 +61,45 @@
   margin-top: 30px;
 }
 
+.container-block-show {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 50px;
+  background-color: #fff;
+}
+
+.category-h1 {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+}
+
 .container-style {
   display: flex;
-  justify-content: space-around;
-  border: 2px solid black;
+  justify-content: space-between;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.container-style-show {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.centered-text{
+  text-align: center;
+}
+
+.column-1 {
+  display: flex;
 }
 
 .image{
@@ -54,10 +110,10 @@
 .first {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.first p{
+.first p {
   margin: 0;
 }
 
@@ -74,10 +130,44 @@
 .column-2 {
   padding: 10px;
   display: flex;
-  width: 75%;
 }
 
 .end-tag {
   display: flex;
   justify-content: flex-end;
+}
+
+.form-payment {
+  margin-top: 20px;
+}
+
+#payments {
+  border-top: 2px solid rgb(234, 237, 240);;
+  margin: 20px;
+  padding: 10px;
+}
+
+.wrapper-1 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.wrapper-1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-success {
+  margin-top: 25px;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid rgb(234, 237, 240);;
+  border-bottom: 2px solid rgb(234, 237, 240);;
+  margin: 20px;
+  padding: 10px;
 }

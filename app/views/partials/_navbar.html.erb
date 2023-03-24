@@ -1,33 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
   <div class="container-fluid">
-    <ul class="navbar-nav">
-      <!-- Avatar -->
+   <ul class="navbar-nav">
+      <!-- Dropdown -->
       <li class="nav-item dropdown">
         <a
-          class="nav-link dropdown-toggle d-flex align-items-center"
+          class="nav-link dropdown-toggle"
           href="#"
           id="navbarDropdownMenuLink"
           role="button"
           data-mdb-toggle="dropdown"
           aria-expanded="false"
         >
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
-            class="rounded-circle"
-            height="22"
-            alt="Portrait of a Woman"
-            loading="lazy"
-          />
+          <i class="fas fa-bars"></i>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li>
-            <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+            <a class="dropdown-item" href="#">Account Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Merchant Finder</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Claim promo</a>
           </li>
         </ul>
       </li>
     </ul>
     <div class="navbar-brand mx-auto">
       <h2>BudgetBee</h2>
+    </div>
+    <div class="navbar-form navbar-right">
+      <%= button_to "Sign out", destroy_user_session_path, class: 'btn btn-primary btn-outline-light', method: :delete %>
     </div>
   </div>
 </nav>

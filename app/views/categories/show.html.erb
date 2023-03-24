@@ -1,28 +1,35 @@
+<div class=" btn btn-primary w-100 text-center">
+<%= button_to "Back to categories", categories_path, class: "btn btn-primary btn-outline-light", method: :get %>
+</div>
+
 <p style="color: green"><%= notice %></p>
 
-<%= render @category %>
-
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+<div class='container-block-show'>
+  <div class="container-style-show">
+        <% if @category.icon.attached? %>
+        <%= image_tag @category.icon, class: "image" %>
+        <% end %>
+        <p class="centered-text"><strong><%= @category.name %></strong></p>
+  </div>
+    <% @payments.each do |payment| %>
+    <div id="payments">
+    <div class="wrapper-1">
+      <p>Transaction: <%= payment.name %></p>
+      <% date = DateTime.parse(payment.created_at.to_s) %>
+      <% formatted_date = date.strftime('%d %B %Y at %l:%M%P') %>
+      <p><small><%= formatted_date %></small></p>
+    </div>
+    <div class="wrapper-2">
+      <p class="amount">Amount: $<%= payment.amount %></p>
+      </div>
+    </div>
+      <% end %>
+    <div class="total-amount">
+      <p><strong>Total amount:</strong></p>
+      <p><strong>$<%= @category.payments.sum(:amount) %></strong></p>
+    </div>
+  <div class="fixed-bottom">
+  <div class="btn btn-success w-100 text-center">
+  <%= button_to "Add New Payment", new_category_payment_path(@category), class: "btn btn-outline-light w-75", method: :get %>
+  </div>
 </div>
-
-<h1>Payments</h1>
-
-<div id="payments">
-  <p>Total amount: $<%= @category.payments.sum(:amount) %></p>
-  <% @payments.each do |payment| %>
-    <p>
-      <%= payment.name %>
-    </p>
-
-  <p class="amount">
-    $<%= payment.amount %>
-  </p>
-  <% end %>
-</div>
-
-
-<%= link_to "Add New Payment", new_category_payment_path(@category) %>

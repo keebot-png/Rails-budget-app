@@ -3,12 +3,9 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
     </div>
-    <div class="navbar-center">
+    <div class="navbar-form navbar-right">
       <a class="navbar-brand" href="#">Register</a>
     </div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "navbar-form navbar-right"}) do |f| %>
-      <%= f.submit "Next", class: "btn btn-default" %>
-    <% end %>
   </div>
 </nav>
 
@@ -27,7 +24,9 @@
       <%= f.password_field :password, placeholder: "Password", class: "form-control", autocomplete: "new-password" %>
     </div>
     <div class="form-group">
-    <%= f.submit "Next", class: "btn btn-default" %>
+    <div class='text-center'>
+    <%= f.submit "Next", class: "btn btn-primary" %>
+    </div>
     </div>
   <% end %>
 </div

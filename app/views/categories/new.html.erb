@@ -1,9 +1,9 @@
-<h1 class="text-center">Create a new category</h1>
+<h1 class="text-center category-h1">Create a new category</h1>
 
 <%= render "form", category: @category %>
 
 <br>
 
-<div>
-  <%= link_to "Back to categories", categories_path %>
+<div class=" btn btn-primary w-100 text-center">
+  <%= button_to "Back to categories", categories_path, class: "btn btn-primary btn-outline-light", method: :get %>
 </div>
