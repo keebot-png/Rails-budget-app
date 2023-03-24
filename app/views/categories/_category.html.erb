@@ -1,0 +1,19 @@
+<div class='container-block'>
+<div class="container-style">
+    <div class="column-1">
+<% if category.icon.attached? %>
+      <%= image_tag category.icon, class: "image" %>
+    <% end %>
+    <div class="first">
+        <p><small><%= link_to category.name, category_path(category.id) %></small></p>
+        <% date = DateTime.parse(category.created_at.to_s) %>
+        <% formatted_date = date.strftime('%d %B %Y') %>
+        <p><small><%= formatted_date %></small></p>
+    </div>
+    </div>
+    <div class="column-2">
+        <div class="second">
+        <p class="end-tag"><strong>Total: $<%= category.payments.sum(:amount) %></strong></p>
+        </div>
+    </div>
+</div>
