@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: microverse-rails
+    databaseName: microverse_rails
+    user: microverse_rails_user
 
 services:
   - type: web
-    name: mysite
+    name: keenan-budget
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: microverse-rails
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
