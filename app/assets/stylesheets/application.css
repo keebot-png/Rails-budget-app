@@ -15,15 +15,15 @@
  */
 
 .squeeze {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-container {
-    position: absolute;
-    bottom: 20px;
+  position: absolute;
+  bottom: 20px;
 }
 
 .container-fluid {
@@ -34,7 +34,7 @@
   background-color: #007bff;
   border-color: white;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 nav a {
@@ -65,7 +65,6 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 30px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 50px;
   background-color: #fff;
@@ -94,7 +93,7 @@ body {
   padding-left: 40px;
 }
 
-.centered-text{
+.centered-text {
   text-align: center;
 }
 
@@ -102,7 +101,7 @@ body {
   display: flex;
 }
 
-.image{
+.image {
   height: 100px;
   padding: 10px;
 }
@@ -142,15 +141,9 @@ body {
 }
 
 #payments {
-  border-top: 2px solid rgb(234, 237, 240);;
+  border-top: 2px solid rgb(234, 237, 240);
   margin: 20px;
   padding: 10px;
-}
-
-.wrapper-1 {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }
 
 .wrapper-1 {
@@ -166,8 +159,8 @@ body {
 .total-amount {
   display: flex;
   justify-content: space-between;
-  border-top: 2px solid rgb(234, 237, 240);;
-  border-bottom: 2px solid rgb(234, 237, 240);;
+  border-top: 2px solid rgb(234, 237, 240);
+  border-bottom: 2px solid rgb(234, 237, 240);
   margin: 20px;
   padding: 10px;
 }
