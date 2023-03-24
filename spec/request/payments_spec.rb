@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'Payments', type: :request do
   let(:user) { create(:user) }
+  let(:category) { create(:category, author_id: user.id) }
   let(:payment) { create(:payment, author_id: user.id) }
-  let(:create) { create(:payment, author_id: user.id) }
   before(:example) { login_as user }
 
   describe 'GET /new' do
     before(:example) do
-      get('/categories/new')
+      get("/categories/#{category.id}/payments/new")
       @response_body = response.body
     end
 
@@ -21,7 +21,7 @@ RSpec.describe 'Payments', type: :request do
     end
 
     it 'body should have Add a new category button' do
-      expect(@response_body).to include 'Create a new category'
+      expect(@response_body).to include 'Create Payment'
     end
   end
 end

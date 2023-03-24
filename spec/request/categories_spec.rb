@@ -26,7 +26,7 @@ RSpec.describe 'Categories', type: :request do
 
   describe 'GET /show' do
     before(:example) do
-      get("/categories/#{category.id}")
+      get "/categories/#{category.id}"
       @response_body = response.body
     end
 
