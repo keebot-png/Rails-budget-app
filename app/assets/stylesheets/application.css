@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ /* * {
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+} */
+
 .squeeze {
     height: 100vh;
     display: flex;
@@ -23,4 +30,54 @@
 .button-container {
     position: absolute;
     bottom: 20px;
+}
+
+.container-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container-style {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+}
+
+.image{
+  height: 100px;
+  padding: 10px;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.first p{
+  margin: 0;
+}
+
+.second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.column-2 {
+  padding: 10px;
+  display: flex;
+  width: 75%;
+}
+
+.end-tag {
+  display: flex;
+  justify-content: flex-end;
 }

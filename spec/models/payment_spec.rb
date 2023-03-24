@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
-    before :each do
-        @user = FactoryBot.build(:user)
-        @payment = FactoryBot.build(:payment, author_id: @user.id)
-    end
-        describe 'Validations' do
-            it 'checks if the name is burger and is valid' do
-                expect(@payment.name).to eql('burger')
-                expect(@payment.name).to be_valid
-            end
+    let(:user) { create(:user) }
+    let(:payment) { create(:payment, author_id: user.id) }
+    describe 'Validations' do
+        it { should validate_presence_of(:amount) }
+        it 'checks if the name is a string' do
+            expect(payment.name).to eql('burger')
         end
+    end
 end
