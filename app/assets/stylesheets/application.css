@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.squeeze {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px;
+}
+
+.container-fluid {
+  background-color: #007bff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: white;
+  color: white;
+}
+
+nav a {
+  color: white;
+}
+
+nav .navbar-brand {
+  color: white;
+}
+
+.fas {
+  color: white;
+}
+
+body {
+  background-color: rgb(234, 237, 240);
+}
+
+.container-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container-block-show {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 50px;
+  background-color: #fff;
+}
+
+.category-h1 {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+}
+
+.container-style {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.container-style-show {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.column-1 {
+  display: flex;
+}
+
+.image {
+  height: 100px;
+  padding: 10px;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.first p {
+  margin: 0;
+}
+
+.second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.column-2 {
+  padding: 10px;
+  display: flex;
+}
+
+.end-tag {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-payment {
+  margin-top: 20px;
+}
+
+#payments {
+  border-top: 2px solid rgb(234, 237, 240);
+  margin: 20px;
+  padding: 10px;
+}
+
+.wrapper-1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-success {
+  margin-top: 25px;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid rgb(234, 237, 240);
+  border-bottom: 2px solid rgb(234, 237, 240);
+  margin: 20px;
+  padding: 10px;
+}
